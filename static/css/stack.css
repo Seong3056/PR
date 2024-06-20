@@ -1,0 +1,138 @@
+.hidden { display: none; }
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stack-list {    
+    height: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: antiquewhite;    
+}
+     section {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;        
+     }
+     .introduce {
+          width: 100vw;
+          max-height: 0;
+          box-sizing: border-box;
+
+          margin-top: 10px;
+          padding: 0 10px;          
+          background-color: #f9f9f9;
+          border-radius: 5px;
+
+          overflow: hidden;
+          transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+      }
+      
+      .hidden {
+          display: none;
+          max-height: 0;
+          
+          transition: max-height 0.5s ease-out;
+      }
+      
+      .expanded {
+          display: block;
+          max-height: 1000px; /* 큰 값으로 설정하여 애니메이션 효과를 적용 */
+          transition: max-height 0.5s ease-in;
+      }   
+      .intro {
+          display: none;
+          padding: 10px;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.3s ease;
+      }
+      
+      .intro.expanded {
+          display: block;
+          max-height: 200px; /* 펼쳐지는 최대 높이 */
+      }
+
+     .stack-list .button {
+          width: 70px;
+          height: 70px;
+          margin: 0px 3px;
+          
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          background-color: #fff;
+          border-radius: 50%;
+
+          box-sizing: unset;
+          box-shadow:  4px 3px 7px 0px rgba(114, 114, 114, 0.44);
+     }     
+     .stack-list .button:hover {
+          cursor: pointer;
+          scale: 1.2;
+          transform: translateY(-5px);
+     }
+     .stack-list div img {
+          width: 60%;
+          height: 60%;
+     }
+
+          .django > img{
+               width: 46% !important;
+               height: 53% !important;
+          }
+          .spring > img {
+               width: 80% !important;
+          }
+          .react > img{
+               height: 55% !important;
+          }
+          .web > img {
+               width: 68% !important;
+               border-top-left-radius: 3px;
+               border-top-right-radius: 3px;
+               transform: translateY(2px);
+          }
+          .aws > img {
+               height: 35.16% !important;
+          }
+     
+/* background: color image repeat position/size origin clip attachment; */
+    /* .python {        
+        background: url('../image/python.png') no-repeat center/60% 60% border-box border-box;
+    }
+    .java {
+         background: url('../image/hcj.png') no-repeat center/contain border-box border-box;
+    }
+    .c {
+         background: url('../image/hcj.png') no-repeat center/contain border-box border-box;
+    }
+    .django {
+         background: url('../image/hcj.png') no-repeat center/contain border-box border-box;
+    }
+    .spring {
+         background: url('../image/hcj.png') no-repeat center/contain border-box border-box;
+    }
+    .react {
+         background: url('../image/hcj.png') no-repeat center/contain border-box border-box;
+    }
+    .web {
+         background: url('../image/hcj.png') no-repeat center/ 55px 49px;
+    }
+    .git {
+         background: url('../image/hcj.png') no-repeat center/contain border-box border-box;
+    }
+    .mysql {
+         background: url('../image/hcj.png') no-repeat center/contain border-box border-box;
+    }
+    .aws {
+         background: url('../image/hcj.png') no-repeat center/contain border-box border-box;
+    } */

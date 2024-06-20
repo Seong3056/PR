@@ -1,40 +1,36 @@
+{% extends '_base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="kor">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'css/index.css' %}">
-    <script src="{% static 'js/index.js' %}"></script>
-</head>
-<body>
-    <div id="menu">
-        <div class="hamburger">
-          <div class="line"></div>
-          <div class="line"></div>
-          <div class="line"></div>
-        </div>
-        <div class="menu-inner">
-          
-          <ul>
-            <li>Menu Item</li>
-            <li>Menu Item</li>
-            <li>Menu Item</li>
-            <li>Menu Item</li>
-            <li>Menu Item</li>
-            <li>Menu Item</li>
-          </ul>
-        </div>
+{% block head %}
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static 'css/index.css' %}">
+  <script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+{% block body %}
+  <div id="menu">
+    <div class="hamburger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <div class="menu-inner">
       
-      
-        
-        <svg version="1.1" id="blob"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z"/>
-        </svg>
-      </div>
+      <ul>
+        <li>Menu Item</li>
+        <li>Menu Item</li>
+        <li>Menu Item</li>
+        <a href="{% url 'project' %}"><li>프로젝트</li></a>
+        <a href="{% url 'stack' %}"><li>기술스택</li></a>
+        <li>Menu Item</li>
+      </ul>
+    </div>
+
+
     
-    
-    <h2> hover close to the menu </h2>
-</body>
-</html>
+    <svg version="1.1" id="blob"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <path id="blob-path" d="M60,500H0V0h60c0,0,20,172,20,250S60,900,60,500z"/>
+    </svg>
+  </div>
+
+
+  <h2> hover close to the menu </h2>
+{% endblock %}

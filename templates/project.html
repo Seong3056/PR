@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block head %}
+  <title>project</title>
+  <link rel="stylesheet" href="{% static 'css/project.css' %}">
+  <script src="{% static 'js/project.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+<main>
+  <a id="changeColorLink" href="{% url 'index' %}">
+    <div id="expandDiv"></div>
+  </a>
+</main>
+{% endblock %}

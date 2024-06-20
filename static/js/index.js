@@ -35,10 +35,10 @@ window.addEventListener('load', function() {
     }
   
     
-    // var hoverZone = 150;
-    // var expandAmount = 20;
-    var hoverZone = 500;
+    var hoverZone = 150;
     var expandAmount = 20;
+    // var hoverZone = 500;
+    // var expandAmount = 20;
 
     function svgCurve() {
         if ((curveX > x - 1) && (curveX < x + 1)) {
@@ -76,7 +76,7 @@ window.addEventListener('load', function() {
         blob.style.width = (curveX + 60) + 'px';
         hamburger.style.transform = 'translate(' + curveX + 'px, ' + curveY + 'px)';
         document.querySelector('h2').style.transform = 'translateY(' + curveY + 'px)';
-  
+        console.log(y,curveY);
         window.requestAnimationFrame(svgCurve);
     }
   

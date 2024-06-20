@@ -95,3 +95,11 @@ body, html {
     font-family: sans-serif;
     font-weight: 100;
   }
+
+/* 드래그 영역 커스텀 */
+::selection {
+  text-shadow: 0 0 6px #CEC9C9, 0 0 20px rgba(206, 201, 201, 0.42);
+}
+::selection {
+  text-shadow: 0 0 6px #ee4c4c, 0 0 20px rgba(223, 28, 28, 0.42);
+}
