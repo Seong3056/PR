@@ -1,4 +1,4 @@
-window.addEventListener('load', function() {
+    window.addEventListener('load', function() {
     var height = window.innerHeight,
         x = 0, y = height / 2,
         curveX = 10,
@@ -74,9 +74,12 @@ window.addEventListener('load', function() {
   
         blobPath.setAttribute('d', newCurve2);
         blob.style.width = (curveX + 60) + 'px';
-        hamburger.style.transform = 'translate(' + curveX + 'px, ' + curveY + 'px)';
+        var scroll = document.documentElement.scrollTop
+        console.log(y, scroll);
+        
         document.querySelector('h2').style.transform = 'translateY(' + curveY + 'px)';
-        console.log(y,curveY);
+        scrollY = curveY - scroll
+        hamburger.style.transform = 'translate(' + curveX + 'px, ' + scrollY + 'px)';
         window.requestAnimationFrame(svgCurve);
     }
   

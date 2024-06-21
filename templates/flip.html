@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page Flip Effect</title>
+  <style>
+    body {
+  margin: 0;
+  height: 400vh; /* For scrolling effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.book {
+  position: relative;
+  width: 210mm; /* A4 width */
+  height: 297mm; /* A4 height */
+  perspective: 1500px;
+  margin-top: 50px;
+}
+
+.page {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: white;
+  box-shadow: 0 0 5px rgba(0,0,0,0.3);
+  transform-origin: top left;
+  transition: transform 0.8s ease-in-out;
+  backface-visibility: hidden;
+}
+
+.page:nth-child(1) {
+  z-index: 4;
+}
+
+.page:nth-child(2) {
+  z-index: 3;
+}
+
+.page:nth-child(3) {
+  z-index: 2;
+}
+
+.page:nth-child(4) {
+  z-index: 1;
+}
+
+.book::before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 10px;
+  left: 10px;
+  background: #555;
+  border-radius: 50%;
+}
+
+
+  </style>
+</head>
+<body>
+  <div class="book">
+    <div class="page" id="page1">Page 1 Content</div>
+    <div class="page" id="page2">Page 2 Content</div>
+    <div class="page" id="page3">Page 3 Content</div>
+    <div class="page" id="page4">Page 4 Content</div>
+  </div>
+
+  <script>
+    document.addEventListener('scroll', () => {
+  const scrollPosition = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const pages = document.querySelectorAll('.page');
+  const book = document.querySelector('.book');
+  const bookRect = book.getBoundingClientRect();
+  const pageHeight = bookRect.height;
+
+  pages.forEach((page, index) => {
+    const pagePosition = index * windowHeight;
+    const nextPagePosition = (index + 1) * windowHeight;
+
+    if (scrollPosition >= pagePosition && scrollPosition < nextPagePosition) {
+      const rotation = (scrollPosition - pagePosition) / windowHeight * 180;
+      page.style.transform = `rotateX(${rotation}deg)`;
+    } else if (scrollPosition >= nextPagePosition) {
+      page.style.transform = 'rotateX(180deg)';
+    } else {
+      page.style.transform = 'rotateX(0deg)';
+    }
+  });
+});
+
+
+  </script>
+</body>
+</html>

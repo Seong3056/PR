@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     width: 100%;
-    height: 100%;
+    height: 500vh;
     background-color:#26394E ;
   }
 
@@ -14,6 +14,7 @@ body, html {
     transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
     transform: translateX(-100%);
     left: 60px;
+    z-index: 999;
   }
 
   #menu.expanded {
@@ -25,6 +26,7 @@ body, html {
     width: 100%;
     height: 100%;
     position: relative;
+    
   }
 
   #blob {
@@ -78,6 +80,7 @@ body, html {
     margin-left: 10%;
     position: absolute;
     top: 10px;
+    
   }
 
   ul li {
@@ -95,6 +98,31 @@ body, html {
     font-family: sans-serif;
     font-weight: 100;
   }
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background: url('../image/sky.jpg') no-repeat center/cover;
+  /* background: color image repeat position/size origin clip attachment; */
+  position: relative;
+}
+.main img{
+  width: 100%;
+  /* height: 100%; */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+}
+.main div {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  font-size: 12vw;
+  line-height: .8;
+  margin-top: 0;
+  text-align: center;
+}
 
 /* 드래그 영역 커스텀 */
 ::selection {

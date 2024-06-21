@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             setTimeout(function() {
                 window.location.href = changeColorLink.getAttribute('href'); // 0.5초 후에 페이지를 이동함
-            }, 1500);
+            }, 300);
         });
     }
 });

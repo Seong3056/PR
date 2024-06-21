@@ -19,10 +19,14 @@ div {
 @keyframes grow {
     0% {
         transform: scale(1); /* 처음에는 크기를 0으로 설정하여 시작 */        
+        opacity: 0;
     }    
-    100% {
+    50% {
         transform: scale(50); /* 100%까지 크기를 1로 증가시켜 원형 모양으로 커짐 */
         opacity: 1; /* 100%까지 투명도를 1로 설정하여 보이게 함 */
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -30,12 +34,12 @@ div {
 #expandDiv {
     width: 100px;
     height: 100px;
-    border-radius: 50%; /* 원 모양의 테두리 반경 설정 */
+    border-radius: 24px; /* 원 모양의 테두리 반경 설정 */
     background-color: tomato; /* 배경색을 토마토(빨간색 계열)으로 설정 */
 }
 
 .expanding {    
-    animation:grow 1.5s cubic-bezier(0.53, 1.19, 0.79, -0.61) forwards;/* grow 애니메이션을 0.5초 동안 ease 함수로 적용하여 실행 후 애니메이션 상태를 유지함 */
+    animation:grow 0.6s ease-in-out forwards;/* grow 애니메이션을 0.5초 동안 ease 함수로 적용하여 실행 후 애니메이션 상태를 유지함 */
     z-index: 9999; /* 다른 요소들보다 위에 나타나도록 z-index를 설정 */
 }
 .expanding::after #expandDiv {
